@@ -3,6 +3,8 @@
 use App\Http\Controllers\CursoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EquipsController;
+use App\Http\Controllers\PartitsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +17,11 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', HomeController::class);
+// Pàgina principal
+
+Route::get('/', HomeController::class); //no tiene array por que va con el metodo __invoke()
+
+// Prova de cursos tutorial
 
 Route::get('cursos',[CursoController::class, 'index']);
 
@@ -23,14 +29,19 @@ Route::get('cursos/create', [CursoController::class, 'create']);
 
 Route::get('cursos/{curso}', [CursoController::class, 'show']);
     
-// });
+//rutas Equips
 
-// Route::get('cursos/{curso}/{categoria?}', function ($curso, $categoria = null) {
-//     if($categoria){
-//         return "Bienvenido al curso $curso , de la categoria $categoria";
-//     }else{
-//         return "Bienvenido al curso: $curso";
-//     }
-    
-// });
+Route::get('equips', [EquipsController::class, 'index']);
+
+Route::get('equips/create', [EquipsController::class, 'create']);
+
+Route::get('equips/{curso}', [EquipsController::class, 'show']);
+
+//rutas Partits
+
+Route::get('partits', [PartitsController::class, 'index']);
+
+Route::get('partits/create', [PartitsController::class, 'create']);
+
+Route::get('partits/{curso}', [PartitsController::class, 'show']);
 
