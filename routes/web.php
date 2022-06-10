@@ -23,11 +23,15 @@ Route::get('/', HomeController::class); //no tiene array por que va con el metod
 
 // Prova de cursos tutorial
 
-Route::get('cursos',[CursoController::class, 'index']);
+Route::controller(CursoController::class)->group(function(){
 
-Route::get('cursos/create', [CursoController::class, 'create']);
+    Route::get('cursos','index');
+    Route::get('cursos/create','create');
+    Route::get('cursos/{curso}','show');
 
-Route::get('cursos/{curso}', [CursoController::class, 'show']);
+});
+
+
     
 //rutas Equips
 
