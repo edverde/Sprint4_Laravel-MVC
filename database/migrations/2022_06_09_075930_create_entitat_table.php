@@ -15,6 +15,7 @@ class CreateEntitatTable extends Migration
     {
         Schema::create('entitat', function (Blueprint $table) {
             $table->id();
+            $table->string('nom_club');
             $table->timestamps();
         });
     }
