@@ -9,6 +9,7 @@ class Partits extends Model
 {
     use HasFactory;
 
+    //relacion inversa
     public function equips(){
         return $this->belongsTo('App\Models\Equips');
     }

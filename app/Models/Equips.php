@@ -12,4 +12,7 @@ class Equips extends Model
     public function entitat(){
         return $this->belongsTo('App\Models\Entitat');
     }
+    public function partits(){
+        return $this->hasMany('App\Models\Partits');
+    }
 }
