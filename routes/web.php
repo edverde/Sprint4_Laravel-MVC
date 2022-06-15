@@ -35,17 +35,19 @@ Route::controller(CursoController::class)->group(function(){
     
 //rutas Equips
 
-Route::get('equips', [EquipsController::class, 'index']);
+Route::get('equips', [EquipsController::class, 'index'])->name('equips.index');
 
-Route::get('equips/create', [EquipsController::class, 'create']);
+Route::get('equips/create', [EquipsController::class, 'create'])->name('equips.create');
 
-Route::get('equips/{curso}', [EquipsController::class, 'show']);
+// Route::post('equips', [EquipsController::class, 'create'])->name('')
+
+Route::get('equips/{id}', [EquipsController::class, 'show'])->name('equips.show');
 
 //rutas Partits
 
-Route::get('partits', [PartitsController::class, 'index']);
+Route::get('partits', [PartitsController::class, 'index'])->name('partits.index');
 
-Route::get('partits/create', [PartitsController::class, 'create']);
+Route::get('partits/create', [PartitsController::class, 'create'])->name('partits.create');
 
-Route::get('partits/{curso}', [PartitsController::class, 'show']);
+Route::get('partits/{id}', [PartitsController::class, 'show'])->name('partits.show');
 

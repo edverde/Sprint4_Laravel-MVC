@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Partits;
 
 class PartitsController extends Controller
 {
@@ -13,7 +14,10 @@ class PartitsController extends Controller
     public function create(){
         return view('partits.create');
     }
-    public function show($curso){
-        return view('partits.show',['curso' => $curso]);
+    public function show($id){
+
+        $partits = Partits::find($id);
+
+        return view('partits.show',compact('partits'));
     }
 }
