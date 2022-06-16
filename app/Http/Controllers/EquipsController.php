@@ -8,7 +8,7 @@ use App\Models\Equips;
 class EquipsController extends Controller
 {
     public function index(){
-        $equips = Equips::paginate();
+        $equips = Equips::orderby('id', 'desc')->paginate();
         // return $equips;
 
         return view('equips.index', compact('equips'));
@@ -17,8 +17,31 @@ class EquipsController extends Controller
     public function create(){
         return view('equips.create');
     }
-    public function show($id){
-        $equips = Equips::find($id);
+    public function create_equips(Request $request){
+        
+        $equips = new Equips();
+        $equips->entitat_id = $request->entitat;
+        $equips->name = $request->name;
+       
+        // return $request->all();
+        // return $equips;
+        $equips->save();
+        return redirect()->route('equips.show', $equips);
+    }
+    public function show(Equips $equips){
+       
         return view('equips.show',compact('equips'));
+    }
+    public function edit(Equips $equips){
+      
+        return view('equips.edit', compact('equips'));
+    }
+    public function update(REquest $request , Equips $equips){
+        $equips->entitat_id = $request->entitat;
+        $equips->name = $request->name;
+        
+        $equips->save();
+        return redirect()->route('equips.show', $equips);
+
     }
 }

@@ -39,9 +39,13 @@ Route::get('equips', [EquipsController::class, 'index'])->name('equips.index');
 
 Route::get('equips/create', [EquipsController::class, 'create'])->name('equips.create');
 
-// Route::post('equips', [EquipsController::class, 'create'])->name('')
+Route::post('equips', [EquipsController::class, 'create_equips'])->name('equips.create_equips');
 
-Route::get('equips/{id}', [EquipsController::class, 'show'])->name('equips.show');
+Route::get('equips/{equips}', [EquipsController::class, 'show'])->name('equips.show');
+
+Route::get('equips/{equips}/edit',[EquipsController::class, 'edit'])->name('equips.edit');
+
+Route::put('equips/{equips}', [EquipsController::class, 'update'])->name('equips.update');
 
 //rutas Partits
 
