@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <h1>bienvenido a la página principal con blade</h1>
+    <h1>bienvenido a futbol vaca unas risas</h1>
 
 @endsection
 

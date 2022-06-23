@@ -18,6 +18,11 @@ class EquipsController extends Controller
         return view('equips.create');
     }
     public function create_equips(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'entitat' => 'required'
+        ]);
+
         
         $equips = new Equips();
         $equips->entitat_id = $request->entitat;
@@ -37,11 +42,22 @@ class EquipsController extends Controller
         return view('equips.edit', compact('equips'));
     }
     public function update(REquest $request , Equips $equips){
+        
+        $request->validate([
+            'name' => 'required',
+            'entitat' => 'required'
+        ]);
+        
         $equips->entitat_id = $request->entitat;
         $equips->name = $request->name;
         
         $equips->save();
         return redirect()->route('equips.show', $equips);
 
+    }
+    public function destroy(Equips $equips){
+        $equips->delete();
+        // return redirect()->route('equips.show', $equips);
+        return redirect()->route('equips.index', $equips);
     }
 }

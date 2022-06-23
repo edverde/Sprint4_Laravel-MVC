@@ -47,6 +47,8 @@ Route::get('equips/{equips}/edit',[EquipsController::class, 'edit'])->name('equi
 
 Route::put('equips/{equips}', [EquipsController::class, 'update'])->name('equips.update');
 
+Route::get('equips/{equips}/delete' , [EquipsController::class, 'destroy'])->name('equips.destroy');
+
 //rutas Partits
 
 Route::get('partits', [PartitsController::class, 'index'])->name('partits.index');
