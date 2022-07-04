@@ -3,10 +3,13 @@
 @section('title', 'Equips')
 
 @section('content')
-<nav>
+{{-- <nav>
     <a href={{route('equips.create')}}>Crear curso</a>
-</nav>
-<h1>Estoy en la pafina principal de equips </h1>
+</nav> --}}
+<div class="text-center p-5   ">
+  <h1 class="uppercase text-4xl font-bold">Els teus equips</h1>
+  <p>Crea, modifica, visualitza o elimina el teu equip</p>
+</div>
 {{-- <ul>
     <hr>
     @foreach ($equips as $equip)
@@ -19,9 +22,8 @@
 
 <div class="container max-w-7xl mx-auto mt-8">
     <div class="mb-4">
-      <h1 class="font-serif text-3xl font-bold underline decoration-gray-400"> Equips</h1>
       <div class="flex justify-end">
-        <button class="px-4 py-2 rounded-md bg-sky-500 text-sky-100 hover:bg-sky-600">Create Post</button>
+        <a href="{{route('equips.create')}}"><button class="px-4 py-2 rounded-md bg-teal-500 text-sky-100 hover:bg-teal-800" >Crear Equip</button></a>
       </div>
     </div>
     <div class="flex flex-col">
@@ -35,15 +37,15 @@
                   ID</th>
                 <th
                   class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                  Title</th>
+                  Nom de l'equip</th>
+                {{-- <th
+                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                  Description</th> --}}
                 <th
                   class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                  Description</th>
-                <th
-                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                  Created_At</th>
-                <th class="px-6 py-3 text-sm text-left text-gray-500 border-b border-gray-200 bg-gray-50" colspan="3">
-                  Action</th>
+                  Creació</th>
+                <th class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50" colspan="3" >
+                  Accions</th>
               </tr>
             </thead>
             
@@ -65,16 +67,16 @@
                   </div>
                 </td>
   
-                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                {{-- <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-                </td>
+                </td> --}}
   
                 <td class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
                   <span>{{$equip->created_at}}</span>
                 </td>
   
                 <td class="text-sm font-medium leading-5 text-center whitespace-no-wrap border-b border-gray-200 ">
-                  <a href="#" class="text-indigo-600 hover:text-indigo-900">
+                  <a href="{{route('equips.edit', $equip->id)}}" class="text-indigo-600 hover:text-indigo-900">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                       stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
