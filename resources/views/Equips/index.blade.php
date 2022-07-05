@@ -6,8 +6,8 @@
 {{-- <nav>
     <a href={{route('equips.create')}}>Crear curso</a>
 </nav> --}}
-<div class="text-center p-5   ">
-  <h1 class="uppercase text-4xl font-bold">Els teus equips</h1>
+<div class="text-center p-5 text-teal-800  ">
+  <h1 class="uppercase text-4xl font-bold ">Els teus equips</h1>
   <p>Crea, modifica, visualitza o elimina el teu equip</p>
 </div>
 {{-- <ul>

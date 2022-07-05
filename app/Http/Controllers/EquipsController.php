@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Equips;
+use App\Models\Partits;
 
 class EquipsController extends Controller
 {
@@ -41,7 +42,7 @@ class EquipsController extends Controller
       
         return view('equips.edit', compact('equips'));
     }
-    public function update(REquest $request , Equips $equips){
+    public function update(Request $request , Equips $equips){
         
         $request->validate([
             'name' => 'required',

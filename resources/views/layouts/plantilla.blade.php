@@ -14,7 +14,7 @@
     
     <nav class="flex items-center justify-between flex-wrap bg-teal-500 px-6">
       <div class="flex items-center flex-shrink-0 text-white mr-6">
-        <img src="{{URL::asset('logo.jpg')}}" alt="logo" style="width: 100px">
+        <a href="{{route('index')}}"><img src="{{URL::asset('logo.jpg')}}" alt="logo" style="width: 100px"></a>
         <h1 class="font-semibold text-xl tracking-tight">FUTBOL VACA UNAS RISAS...</h1>
       </div>
       <div class="block lg:hidden">
@@ -30,7 +30,7 @@
           <a href="{{route('equips.create_equips')}}" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
             Equips
           </a>
-          <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
+          <a href="{{route('partits.create_partits')}}" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
             Partits
           </a>
         </div>
