@@ -19,7 +19,7 @@ use App\Http\Controllers\PartitsController;
 
 // Pàgina principal
 
-Route::get('/', HomeController::class); //no tiene array por que va con el metodo __invoke()
+Route::get('/', HomeController::class)->name('index'); //no tiene array por que va con el metodo __invoke()
 
 // Prova de cursos tutorial
 
@@ -35,17 +35,40 @@ Route::controller(CursoController::class)->group(function(){
     
 //rutas Equips
 
-Route::get('equips', [EquipsController::class, 'index']);
+Route::get('equips', [EquipsController::class, 'index'])->name('equips.index');
 
-Route::get('equips/create', [EquipsController::class, 'create']);
+Route::get('equips/create', [EquipsController::class, 'create'])->name('equips.create');
 
-Route::get('equips/{curso}', [EquipsController::class, 'show']);
+Route::post('equips', [EquipsController::class, 'create_equips'])->name('equips.create_equips');
+
+Route::get('equips/{equips}', [EquipsController::class, 'show'])->name('equips.show');
+
+Route::get('equips/{equips}/edit',[EquipsController::class, 'edit'])->name('equips.edit');
+
+Route::put('equips/{equips}', [EquipsController::class, 'update'])->name('equips.update');
+
+Route::get('equips/{equips}/delete' , [EquipsController::class, 'destroy'])->name('equips.destroy');
 
 //rutas Partits
 
-Route::get('partits', [PartitsController::class, 'index']);
+// Route::get('partits', [PartitsController::class, 'index'])->name('partits.index');
 
-Route::get('partits/create', [PartitsController::class, 'create']);
+// Route::get('partits/create', [PartitsController::class, 'create'])->name('partits.create');
 
-Route::get('partits/{curso}', [PartitsController::class, 'show']);
+// Route::get('partits/{id}', [PartitsController::class, 'show'])->name('partits.show');
 
+// copy
+
+Route::get('partits', [PartitsController::class, 'index'])->name('partits.index');
+
+Route::get('partits/create', [PartitsController::class, 'create'])->name('partits.create');
+
+Route::post('partits', [PartitsController::class, 'create_partits'])->name('partits.create_partits');
+
+Route::get('partits/{partits}', [PartitsController::class, 'show'])->name('partits.show');
+
+Route::get('partits/{partits}/edit',[PartitsController::class, 'edit'])->name('partits.edit');
+
+Route::put('partits/{partits}', [PartitsController::class, 'update'])->name('partits.update');
+
+Route::get('partits/{partits}/delete' , [PartitsController::class, 'destroy'])->name('partits.destroy');

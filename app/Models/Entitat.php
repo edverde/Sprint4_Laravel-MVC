@@ -9,6 +9,7 @@ class Entitat extends Model
 {
     use HasFactory;
     
+    //relacion a muchos
     public function equips(){
         return $this->hasMany('App\Models\Equips');
     }
