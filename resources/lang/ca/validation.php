@@ -33,7 +33,7 @@ return [
     'confirmed'            => 'El camp :attribute i la seva confirmació no coincideixen.',
     'date'                 => 'El camp :attribute no és una data vàlida.',
     'date_format'          => 'El camp :attribute no concorda amb el format :format.',
-    'different'            => 'Els camps :attribute i :other han de ser differents.',
+    'different'            => 'Els camps :attribute i :other han de ser diferents.',
     'digits'               => 'El camp :attribute ha de contenir :digits dígits.',
     'digits_between'       => 'El camp :attribute ha de contenir entre :min i :max dígits.',
     'dimensions'           => 'El camp :attribute conté mides incorrectes.',

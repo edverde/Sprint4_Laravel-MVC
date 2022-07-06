@@ -12,22 +12,24 @@ class EquipsController extends Controller
 {
     public function index(){
         $equips = Equips::orderby('id', 'desc')->paginate();
+       
         
         return view('equips.index', compact('equips'));
     }
 
     public function create(){
-        return view('equips.create');
+        $entitats= Entitats::all();
+        return view('equips.create', compact('entitats'));
     }
 
     public function create_equips(Request $request){
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|unique:equips,name|max:50',
             'entitat' => 'required'
         ]);
         
         $equips = new Equips();
-        $equips->entitat_id = $request->entitat;
+        $equips->entitats_id = $request->entitat;
         $equips->name = $request->name;
         $equips->save();
 
@@ -38,21 +40,22 @@ class EquipsController extends Controller
         return view('equips.show',compact('equips'));        
     }
 
-    public function edit(Equips $equips){      
-        return view('equips.edit', compact('equips'));
+    public function edit(Equips $equips){  
+        $entitats= Entitats::all();    
+        return view('equips.edit', compact('equips','entitats'));
     }
 
     public function update(Request $request , Equips $equips){        
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|unique:equips,name|max:50',
             'entitat' => 'required'
         ]);
         
-        $equips->entitat_id = $request->entitat;
+        $equips->entitats_id = $request->entitat;
         $equips->name = $request->name;        
         $equips->save();
 
-        return redirect()->route('equips.show', $equips);
+        return redirect()->route('equips.index', $equips);
 
     }
 

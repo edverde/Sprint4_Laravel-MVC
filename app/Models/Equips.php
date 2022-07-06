@@ -9,8 +9,8 @@ class Equips extends Model
 {
     use HasFactory;
 
-    public function entitat(){
-        return $this->belongsTo('App\Models\Entitat');
+    public function entitats(){
+        return $this->belongsTo('App\Models\Entitats');
     }
     public function partits(){
         return $this->hasMany('App\Models\Partits');
