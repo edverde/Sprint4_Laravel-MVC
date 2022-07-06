@@ -21,6 +21,21 @@ use App\Http\Controllers\PartitsController;
 
 Route::get('/', HomeController::class)->name('index'); //no tiene array por que va con el metodo __invoke()
     
+//rutas Entitats
+
+Route::get('entitats', [EntitatsController::class, 'index'])->name('entitats.index');
+
+Route::get('entitats/create', [EntitatsController::class, 'create'])->name('entitats.create');
+
+Route::post('entitats', [EntitatsController::class, 'create_entitats'])->name('entitats.create_entitats');
+
+Route::get('entitats/{entitats}', [EntitatsController::class, 'show'])->name('entitats.show');
+
+Route::get('entitats/{entitats}/edit',[EntitatsController::class, 'edit'])->name('entitats.edit');
+
+Route::put('entitats/{entitats}', [EntitatsController::class, 'update'])->name('entitats.update');
+
+Route::get('entitats/{entitats}/delete' , [EntitatsController::class, 'destroy'])->name('entitats.destroy');
 
 //rutas Equips
 
