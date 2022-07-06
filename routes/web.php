@@ -20,19 +20,8 @@ use App\Http\Controllers\PartitsController;
 // Pàgina principal
 
 Route::get('/', HomeController::class)->name('index'); //no tiene array por que va con el metodo __invoke()
-
-// Prova de cursos tutorial
-
-Route::controller(CursoController::class)->group(function(){
-
-    Route::get('cursos','index');
-    Route::get('cursos/create','create');
-    Route::get('cursos/{curso}','show');
-
-});
-
-
     
+
 //rutas Equips
 
 Route::get('equips', [EquipsController::class, 'index'])->name('equips.index');
@@ -50,14 +39,6 @@ Route::put('equips/{equips}', [EquipsController::class, 'update'])->name('equips
 Route::get('equips/{equips}/delete' , [EquipsController::class, 'destroy'])->name('equips.destroy');
 
 //rutas Partits
-
-// Route::get('partits', [PartitsController::class, 'index'])->name('partits.index');
-
-// Route::get('partits/create', [PartitsController::class, 'create'])->name('partits.create');
-
-// Route::get('partits/{id}', [PartitsController::class, 'show'])->name('partits.show');
-
-// copy
 
 Route::get('partits', [PartitsController::class, 'index'])->name('partits.index');
 
