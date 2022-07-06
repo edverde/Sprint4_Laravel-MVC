@@ -10,8 +10,8 @@
 <body>
   <div class="flex flex-col h-screen min-h-screen">
 
-    {{-- header --}}
-    
+    {{-- header --}}  
+
     <nav class="flex items-center justify-between flex-wrap bg-teal-500 px-6">
       <div class="flex items-center flex-shrink-0 text-white mr-6">
         <a href="{{route('index')}}"><img src="{{URL::asset('logo.jpg')}}" alt="logo" style="width: 100px"></a>
@@ -33,10 +33,7 @@
           <a href="{{route('partits.create_partits')}}" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
             Partits
           </a>
-        </div>
-        {{-- <div>
-          <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Download</a>
-        </div> --}}
+        </div>        
       </div>
     </nav>
 

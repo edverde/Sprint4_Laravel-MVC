@@ -19,9 +19,9 @@ class CreatePartitsTable extends Migration
             $table->unsignedBigInteger('equip_visitant')->nullable();//->references('id')->on('equips');
             $table->foreign('equip_local')->references('id')->on('equips')->onDelete('set null');
             $table->foreign('equip_visitant')->references('id')->on('equips')->onDelete('set null');
-            $table->date('data');
-            $table->time('hora');
-            $table->string('estat');
+            $table->date('data_partit');
+            $table->time('hora_partit');
+            // $table->string('estat');
 
             $table->timestamps();
         });
