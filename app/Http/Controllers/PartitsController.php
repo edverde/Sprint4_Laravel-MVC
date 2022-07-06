@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\Partits;
+use App\Models\Entitats;
 use App\Models\Equips;
+use App\Models\Partits;
+
 use Illuminate\Http\Request;
+
 
 class PartitsController extends Controller
 {
