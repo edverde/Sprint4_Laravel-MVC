@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Entitats;
 use App\Models\Equips;
 use App\Models\Partits;
+
 
 class EquipsController extends Controller
 {
