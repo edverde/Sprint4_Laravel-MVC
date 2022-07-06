@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\Entitats;
 use App\Models\Equips;
 use App\Models\Partits;
 
 use Illuminate\Http\Request;
-
-
 class PartitsController extends Controller
 {
     public function index(){
@@ -30,7 +27,7 @@ class PartitsController extends Controller
             'hora_partit'=>'required',
             // 'estat'=>'required',
             'equip_local'=>'required',
-            'equip_visitant'=>'required'
+            'equip_visitant'=>'required|different:equip_local'
         ]);
 
         // intentar conseguir el nom de l'equip enlloc del ID
@@ -68,7 +65,7 @@ class PartitsController extends Controller
             'hora_partit'=>'required',
             // 'estat'=>'required',
             'equip_local'=>'required',
-            'equip_visitant'=>'required'
+            'equip_visitant'=>'required|different:equip_local'
         ]);
         
         $partits->data_partit = $request->data_partit;

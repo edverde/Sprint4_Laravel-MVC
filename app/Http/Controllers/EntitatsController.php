@@ -16,42 +16,44 @@ class EntitatsController extends Controller
     }
 
     public function create(){
+       
         return view('entitats.create');
     }
 
     public function create_entitats(Request $request){
-    //     $request->validate([
-    //         'name' => 'required',
-    //         'entitat' => 'required'
-    //     ]);
+        $request->validate([
+            'nom' => 'required|unique:entitats,nom_club|max:50',
+            
+        ]);
         
-    //     $equips = new Entitats();
-    //     $equips->entitat_id = $request->entitat;
-    //     $equips->name = $request->name;
-    //     $equips->save();
+        $entitats = new Entitats();
+       
+        $entitats->nom_club= $request->nom;
+        $entitats->save();
 
-    //     return redirect()->route('entitats.index');
+        return redirect()->route('entitats.index');
     }
 
     public function show(Entitats $entitats){
         return view('entitats.show',compact('entitats'));        
     }
 
-    public function edit(Entitats $entitats){      
+    public function edit(Entitats $entitats){    
+          
         return view('entitats.edit', compact('entitats'));
     }
 
     public function update(Request $request , Entitats $entitats){        
-        // $request->validate([
-        //     'name' => 'required',
-        //     'entitat' => 'required'
-        // ]);
+        $request->validate([
+            'nom' => 'required|unique:entitats,nom_club|max:50',
+          
+        ]);
         
-        // $entitats->entitat_id = $request->entitat;
-        // $entitats->name = $request->name;        
-        // $entitats->save();
+        
+        $entitats->nom_club = $request->nom;        
+        $entitats->save();
 
-        // return redirect()->route('entitats.show', $entitats);
+        return redirect()->route('entitats.index', $entitats);
 
     }
 

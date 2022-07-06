@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EquipsController;
 use App\Http\Controllers\PartitsController;
+use App\Http\Controllers\EntitatsController;
 
 /*
 |--------------------------------------------------------------------------

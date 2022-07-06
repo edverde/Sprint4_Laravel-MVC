@@ -17,8 +17,8 @@ class CreateEquipsTable extends Migration
             $table->id();
             $table->string('name')->unique();
             // $table->string('club')->references('id')->on('entitats');
-            $table->unsignedBigInteger('entitat_id'); //entero grande sin signo
-            $table->foreign('entitat_id')->references('id')->on('entitat');
+            $table->unsignedBigInteger('entitats_id'); //entero grande sin signo
+            $table->foreign('entitats_id')->references('id')->on('entitats');
             $table->timestamps();
         });
     }
