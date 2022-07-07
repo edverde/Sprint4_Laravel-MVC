@@ -12,9 +12,16 @@ class EquipsController extends Controller
 {
     public function index(){
         $equips = Equips::orderby('id', 'desc')->paginate();
-       
         
-        return view('equips.index', compact('equips'));
+        
+        $entitats = Equips::join('entitats','equips.entitats_id','=','entitats.id')
+        ->select('equips.id as id_equips','equips.name as nom_equip','entitats.nom_club as nom_entitat')
+        ->distinct()
+        ->get();
+       
+       
+        return view('equips.index', compact('equips', 'entitats'))
+        ->with('entitats', $entitats);
     }
 
     public function create(){

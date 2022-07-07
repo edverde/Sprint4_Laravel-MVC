@@ -37,7 +37,7 @@
                 Accions</th>
             </tr>
           </thead>
-          @if($equips)
+          {{-- @if($equips) --}}
             {{-- inici foreach --}}
 
             @foreach ($equips as $equip)
@@ -52,14 +52,11 @@
                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                   <div class="text-sm leading-5 text-gray-900">{{$equip->name}}
                   </div>
-                </td>
-                {{-- @foreach($entitats as $entitat) --}}
+                </td>                
                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                  <div class="text-sm leading-5 text-gray-900">{{$equip->entitats_id}}
-                    {{-- {{$entitat->nom_club}} --}}
+                   <div class="text-sm leading-5 text-gray-900">{{$equip->entitats->nom_club}}
                   </div>
                 </td>
-                {{-- @endforeach --}}
                 <td class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
                   <span>{{$equip->created_at}}</span>
                 </td>
@@ -93,9 +90,9 @@
               </tr>
               @endforeach 
               {{-- final foreach --}}   
-            @else
+            {{-- @else
               <h2>No hi han equips a mostrar</h2>
-            @endif
+            @endif --}}
           </tbody>
         </table>
       </div>
