@@ -12,7 +12,8 @@ class EntitatsController extends Controller
     public function index(){
         $entitats = Entitats::orderby('id', 'desc')->paginate();
         
-        return view('entitats.index', compact('entitats'));
+
+        return view('entitats.index', compact('entitats',));
     }
 
     public function create(){

@@ -10,9 +10,22 @@ use Illuminate\Http\Request;
 class PartitsController extends Controller
 {
     public function index(){
-        $partits = Partits::orderby('data_partit')->paginate();
-
-        return view('partits.index', compact('partits'));
+        
+        $partitsJ = Partits::join('equips','equip_local','=','equips.id')
+        ->join('equips as equipVisitant','equip_visitant', '=', 'equipVisitant.id')
+        ->select(
+            'equips.name as nom_local',
+            'equipVisitant.name as nom_visitant',
+            'partits.data_partit as data',
+            'partits.hora_partit as hora',
+            'partits.id as id'
+        
+        )
+        ->orderby('data')
+        ->get();
+        
+        return view('partits.index', compact('partitsJ'))->with('partitsJ', $partitsJ);
+        
     }
 
     public function create(){
@@ -29,27 +42,24 @@ class PartitsController extends Controller
             'equip_local'=>'required',
             'equip_visitant'=>'required|different:equip_local'
         ]);
-
-        // intentar conseguir el nom de l'equip enlloc del ID
         
-        $equip_local = Equips::find($request->equip_local)->take('name');
-        $equip_visitant = Equips::find($request->equip_visitant)->pluck('name'); 
-        
-        // var_dump($equips_name);
-        // exit();
 
         $partits = new Partits();
         $partits->data_partit = $request->data_partit;
         $partits->hora_partit = $request->hora_partit;
         // $partits->estat = $request->estat;
         $partits->equip_local = $request->equip_local;
-        $partits->equip_visitant = $request->equip_visitant;        
+        $partits->equip_visitant = $request->equip_visitant;      
         $partits->save();
 
         return redirect()->route('partits.index');
     }
 
-    public function show(Partits $partits){       
+    public function show(Partits $partits){ 
+        
+        
+        
+        // var_dump($partitsJ);die();
         return view('partits.show',compact('partits'));
     }
 

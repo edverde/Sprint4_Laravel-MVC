@@ -44,6 +44,7 @@ class EquipsController extends Controller
     }
 
     public function show(Equips $equips){
+        
         return view('equips.show',compact('equips'));        
     }
 
