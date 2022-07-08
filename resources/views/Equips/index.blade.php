@@ -6,7 +6,7 @@
 
 <div class="text-center p-5 text-teal-800  ">
   <h1 class="uppercase text-4xl font-bold ">Els teus equips</h1>
-  <p>Crea, modifica, visualitza o elimina el teu equip</p>
+  <p>Crea, modifica o elimina el teu equip</p>
 </div>
 
 <div class="container max-w-7xl mx-auto mt-8">
@@ -21,9 +21,6 @@
         <table class="min-w-full">
           <thead>
             <tr>
-              <th
-                class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                ID</th>
               <th
                 class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
                 Nom de l'equip</th>   
@@ -45,12 +42,7 @@
             <tbody class="bg-white">
               <tr>
                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                  <div class="flex items-center">
-                    {{$equip->id}}
-                  </div>
-                </td>
-                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                  <div class="text-sm leading-5 text-gray-900">{{$equip->name}}
+                  <div class="text-sm leading-5 text-gray-900">{{$equip->name}}</>
                   </div>
                 </td>                
                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
@@ -68,7 +60,7 @@
                         d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                     </svg>
                   </a>
-                <td class="text-sm font-medium leading-5 text-center whitespace-no-wrap border-b border-gray-200 ">
+                {{-- <td class="text-sm font-medium leading-5 text-center whitespace-no-wrap border-b border-gray-200 ">
                   <a href="{{route('equips.show' , $equip->id)}}" class="text-gray-600 hover:text-gray-900">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                       stroke="currentColor">
@@ -78,7 +70,7 @@
                         d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                     </svg>
                   </a>
-                </td>
+                </td> --}}
                 </td>
                 <td class="text-sm font-medium leading-5 whitespace-no-wrap border-b border-gray-200 ">                
                   <a href="{{route('equips.destroy' , $equip->id)}}"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-600 hover:text-red-800"
