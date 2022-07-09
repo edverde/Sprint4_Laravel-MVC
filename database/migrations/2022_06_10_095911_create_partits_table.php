@@ -15,13 +15,13 @@ class CreatePartitsTable extends Migration
     {
         Schema::create('partits', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('equip_local')->nullable();//->references('id')->on('equips');
-            $table->unsignedBigInteger('equip_visitant')->nullable();//->references('id')->on('equips');
-            $table->foreign('equip_local')->references('id')->on('equips')->onDelete('set null');
-            $table->foreign('equip_visitant')->references('id')->on('equips')->onDelete('set null');
+            $table->unsignedBigInteger('equip_local')->nullable();
+            $table->unsignedBigInteger('equip_visitant')->nullable();
+            $table->foreign('equip_local')->references('id')->on('equips')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('equip_visitant')->references('id')->on('equips')->onDelete('cascade')->onUpdate('cascade');
             $table->date('data_partit');
             $table->time('hora_partit');
-            // $table->string('estat');
+            
 
             $table->timestamps();
         });

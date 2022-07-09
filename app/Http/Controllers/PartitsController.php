@@ -37,8 +37,7 @@ class PartitsController extends Controller
     public function create_partits(Request $request){        
         $request->validate([
             'data_partit'=>'required',
-            'hora_partit'=>'required',
-            // 'estat'=>'required',
+            'hora_partit'=>'required',  
             'equip_local'=>'required',
             'equip_visitant'=>'required|different:equip_local'
         ]);
@@ -46,8 +45,7 @@ class PartitsController extends Controller
 
         $partits = new Partits();
         $partits->data_partit = $request->data_partit;
-        $partits->hora_partit = $request->hora_partit;
-        // $partits->estat = $request->estat;
+        $partits->hora_partit = $request->hora_partit;       
         $partits->equip_local = $request->equip_local;
         $partits->equip_visitant = $request->equip_visitant;      
         $partits->save();
@@ -56,10 +54,7 @@ class PartitsController extends Controller
     }
 
     public function show(Partits $partits){ 
-        
-        
-        
-        // var_dump($partitsJ);die();
+       
         return view('partits.show',compact('partits'));
     }
 
@@ -73,14 +68,12 @@ class PartitsController extends Controller
         $request->validate([
             'data_partit'=>'required',
             'hora_partit'=>'required',
-            // 'estat'=>'required',
             'equip_local'=>'required',
             'equip_visitant'=>'required|different:equip_local'
         ]);
         
         $partits->data_partit = $request->data_partit;
         $partits->hora_partit = $request->hora_partit;
-        // $partits->estat = $request->estat;
         $partits->equip_local = $request->equip_local;
         $partits->equip_visitant = $request->equip_visitant;        
         $partits->save();

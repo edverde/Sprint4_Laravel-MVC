@@ -30,7 +30,7 @@ Route::get('entitats/create', [EntitatsController::class, 'create'])->name('enti
 
 Route::post('entitats', [EntitatsController::class, 'create_entitats'])->name('entitats.create_entitats');
 
-Route::get('entitats/{entitats}', [EntitatsController::class, 'show'])->name('entitats.show');
+// Route::get('entitats/{entitats}', [EntitatsController::class, 'show'])->name('entitats.show');
 
 Route::get('entitats/{entitats}/edit',[EntitatsController::class, 'edit'])->name('entitats.edit');
 
@@ -46,7 +46,7 @@ Route::get('equips/create', [EquipsController::class, 'create'])->name('equips.c
 
 Route::post('equips', [EquipsController::class, 'create_equips'])->name('equips.create_equips');
 
-Route::get('equips/{equips}', [EquipsController::class, 'show'])->name('equips.show');
+// Route::get('equips/{equips}', [EquipsController::class, 'show'])->name('equips.show');
 
 Route::get('equips/{equips}/edit',[EquipsController::class, 'edit'])->name('equips.edit');
 
@@ -62,7 +62,7 @@ Route::get('partits/create', [PartitsController::class, 'create'])->name('partit
 
 Route::post('partits', [PartitsController::class, 'create_partits'])->name('partits.create_partits');
 
-Route::get('partits/{partits}', [PartitsController::class, 'show'])->name('partits.show');
+// Route::get('partits/{partits}', [PartitsController::class, 'show'])->name('partits.show');
 
 Route::get('partits/{partits}/edit',[PartitsController::class, 'edit'])->name('partits.edit');
 

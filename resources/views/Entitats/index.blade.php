@@ -31,11 +31,11 @@
                 Accions</th>
             </tr>
           </thead>
-          @if($entitats)
-            {{-- inici foreach --}}
-
+          
             @foreach ($entitats as $entitat)
 
+            {{-- inici foreach --}}
+          
             <tbody class="bg-white">
               <tr>
                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
@@ -74,12 +74,8 @@
                 </td>
               </tr>
               @endforeach 
-              {{-- final foreach --}}       
-            
+              {{-- final foreach --}}  
             </tbody>
-            @else
-              <h2>No hi han entitats a mostrar</h2>
-            @endif
         </table>
       </div>
     </div>

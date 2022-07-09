@@ -16,9 +16,8 @@ class CreateEquipsTable extends Migration
         Schema::create('equips', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            // $table->string('club')->references('id')->on('entitats');
             $table->unsignedBigInteger('entitats_id'); //entero grande sin signo
-            $table->foreign('entitats_id')->references('id')->on('entitats');
+            $table->foreign('entitats_id')->references('id')->on('entitats')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

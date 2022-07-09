@@ -34,7 +34,7 @@
                 Accions</th>
             </tr>
           </thead>
-          {{-- @if($equips) --}}
+         
             {{-- inici foreach --}}
 
             @foreach ($equips as $equip)
@@ -82,9 +82,7 @@
               </tr>
               @endforeach 
               {{-- final foreach --}}   
-            {{-- @else
-              <h2>No hi han equips a mostrar</h2>
-            @endif --}}
+            
           </tbody>
         </table>
       </div>
