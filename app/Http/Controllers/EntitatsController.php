@@ -36,8 +36,7 @@ class EntitatsController extends Controller
     }
 
     public function show(Entitats $entitats){
-        // $equips = Entitats::join('equips','id ','=',' entitats_id ')
-        // ->where('entitats.id','=',$entitats->id)->get();
+      
         return view('entitats.show',compact('entitats'));        
     }
 

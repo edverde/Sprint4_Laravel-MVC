@@ -36,15 +36,10 @@
                 Accions</th>
             </tr>
           </thead>
-
-          {{-- condición para mostrar --}}
-
-          {{-- @if($partitJ) --}}
-
             {{-- inici foreach --}}
-
+          
             @foreach ($partitsJ as $partit)
-            
+
             <tbody class="bg-white">
               <tr>
                 <td class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
@@ -92,15 +87,10 @@
                     </svg></a>
                 </td>
               </tr>
-
+ 
             @endforeach 
 
-            {{-- final foreach --}}      
-            
-                
-          {{-- @else
-            <h2>No hi han partits a mostrar</h2> 
-          @endif      --}}
+            {{-- final foreach --}}  
             </tbody>
         </table>
       </div>
